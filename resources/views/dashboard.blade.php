@@ -1,17 +1,30 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    @include('layout.script')
+    @include('layout.style')
+    <title>Dashboard</title>
+</head>
+<body class="text-gray-800 font-inter">
+    
+    <!-- start: Sidebar -->
+    @include('layout.sidebar')
+    <!-- end: Sidebar -->
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+    <!-- start: Main -->
+    <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
+        @include('layout.header')
+        <div class="p-6">
+            
         </div>
-    </div>
-</x-app-layout>
+    </main>
+    <!-- end: Main -->
+
+   
+
+   
+</body>
+</html>
