@@ -1,11 +1,11 @@
 <div class="fixed left-0 top-0 w-64 h-full bg-indigo-500 p-4 z-50 sidebar-menu transition-transform">
-    <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-        <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-10 h-10 rounded object-cover">
-        <span class="text-lg font-bold text-white ml-3">John Doe</span>
+    <a href="{{route('dashboard')}}" class="flex items-center pb-4 border-b border-b-gray-800">
+        <img src="{{  asset('assets/profile/'.Auth::user()->image )}}" alt="" class="w-10 h-10 rounded object-cover">
+        <span class="text-lg font-bold text-white ml-3">{{ Auth::user()->name }}</span>
     </a>
     <ul class="mt-4">
         <li class="mb-1 group active">
-            <a href="#" class="flex items-center py-2 px-4 text-gray-300 hover:bg-indigo-900 hover:text-gray-100 rounded-md group-[.active]:bg-indigo-900 group-[.active]:text-white group-[.selected]:bg-indigo-900 group-[.selected]:text-gray-100">
+            <a href="{{route('dashboard')}}" class="flex items-center py-2 px-4 text-gray-300 hover:bg-indigo-900 hover:text-gray-100 rounded-md group-[.active]:bg-indigo-900 group-[.active]:text-white group-[.selected]:bg-indigo-900 group-[.selected]:text-gray-100">
                 <i class="ri-home-2-line mr-3 text-lg"></i>
                 <span class="text-sm">Dashboard</span>
             </a>

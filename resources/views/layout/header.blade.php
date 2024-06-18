@@ -97,7 +97,7 @@
         
             
       <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-           <img src="{{ asset('assets/img/logo.png') }}" class="w-10 h-10 rounded object-cover" alt="">    
+           <img src="{{ asset('assets/profile/'.Auth::user()->image ) }}" class="w-10 h-10 rounded object-cover" alt="">    
            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.7" stroke="black" class="w-6 h-4 font-bold">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
            </svg>
@@ -106,7 +106,7 @@
       <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
            <li>
-             <a href="#" class="block text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+             <a href="{{ route('profile.edit') }}" class="block text-center py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
            </li>
   
           <li>
