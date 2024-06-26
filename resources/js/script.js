@@ -3,6 +3,16 @@ const sidebarToggle = document.querySelector('.sidebar-toggle')
 const sidebarOverlay = document.querySelector('.sidebar-overlay')
 const sidebarMenu = document.querySelector('.sidebar-menu')
 const main = document.querySelector('.main')
+const buttons = document.querySelectorAll('.show')
+const drops = document.querySelectorAll('.drop')
+
+buttons.forEach((button,index) => 
+   button.addEventListener('click',function(e){
+    if(drops[index]){
+        drops[index].classList.toggle('hidden')
+    }
+   })
+)
 if(window.innerWidth < 768) {
     main.classList.toggle('active')
     sidebarOverlay.classList.toggle('hidden')

@@ -1,6 +1,10 @@
 <div class="fixed left-0 top-0 w-64 h-full bg-indigo-500 p-4 z-50 sidebar-menu transition-transform">
     <a href="{{route('dashboard')}}" class="flex items-center pb-4 border-b border-b-gray-800">
-        <img src="{{  asset('assets/profile/'.Auth::user()->image )}}" alt="" class="w-10 h-10 rounded object-cover">
+        @if (Auth::user()->image AND file_exists(public_path("assets/profile/".Auth::user()->image)))
+              <img src="{{  asset('assets/profile/'.Auth::user()->image )}}" alt="" class="w-10 h-10 rounded object-cover">
+           @else
+              <img src="{{  asset('assets/img/logo.png' )}}" alt="" class="w-10 h-10 rounded object-cover"> 
+           @endif   
         <span class="text-lg font-bold text-white ml-3">{{ Auth::user()->name }}</span>
     </a>
     <ul class="mt-4">
@@ -34,10 +38,10 @@
             </a>
             <ul class="pl-7 mt-2 hidden group-[.selected]:block">
                 <li class="mb-4">
-                    <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Ajouter article</a>
+                    <a href="{{route('category.create')}}" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Ajouter catégorie</a>
                 </li> 
                 <li class="mb-4">
-                    <a href="#" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Liste des articles</a>
+                    <a href="{{ route('category.index') }}" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Liste des catégories</a>
                 </li> 
                 
             </ul>

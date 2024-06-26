@@ -22,7 +22,28 @@
         </div>
     </main>
     <!-- end: Main -->
-
+    
+   @if (session()->get('error'))
+     <script>
+        iziToast.error({
+            title:'Error',
+            position:'topRight',
+            message:'{{ session()->get('error') }}'
+        })
+     </script>
+       
+   @endif
+   
+   @if (session()->get('success'))
+     <script>
+        iziToast.success({
+            title:'succès',
+            position:'topRight',
+            message:'{{ session()->get('success') }}'
+        })
+     </script>
+       
+   @endif
    
 
    
